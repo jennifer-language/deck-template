@@ -1,0 +1,16 @@
+[package]
+name = "@myscope/mydeck"
+version = "0.1.0"
+description = "One sentence on what this deck does, in plain words"
+license = "LGPL-3.0-only"
+authors = ["someone <myname@example.com>"]
+capabilities = []
+keywords = ["jennifer", "deck"]
+
+[package.urls]
+deck = "https://raw.githubusercontent.com/jennifer-language/deck-template/main/deck.toml"
+homepage = "https://github.com/jennifer-language/deck-template"
+manual = "https://jennifer-language.github.io/deck-template/"
+
+[engines]
+jennifer = ">=0.25.0"
