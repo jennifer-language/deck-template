@@ -12,9 +12,7 @@ clean = true
 jobs = 0
 
 [html]
-# Any of the ten built-in themes; run "grimoire themes" for the list.
-theme = "ivy"
-# The colour mode a first-time reader gets: auto, light, or dark.
+theme = "nordic"
 mode = "auto"
 navPosition = "left"
 tocPosition = "right"
@@ -32,5 +30,4 @@ enabled = true
 enabled = true
 
 [pdf]
-# The book is published as a site only.
 enabled = false

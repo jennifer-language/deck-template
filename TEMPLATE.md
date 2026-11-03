@@ -84,6 +84,10 @@ entry module `use` the shared modules and `include` each topic.
 - `CLAUDE.md`: fill in the sections or delete the empty ones. Keep the
   `@AGENTS.md` import line at the top.
 - In GitHub, **Settings -> Pages -> Source -> GitHub Actions**, once, or
-  `docs.yml` publishes nothing.
+  `docs.yml` publishes nothing; and under **Settings -> Environments ->
+  github-pages**, a deployment tag rule `[0-9]*.[0-9]*.[0-9]*`, or the deploy
+  after a release tag is refused. `docs.yml` calls Grimoire's shared Pages
+  workflow, which publishes the book of the highest release tag (main before
+  the first one); see <https://grimoire.jennifer-lang.dev/github-pages.html>.
 - The release workflow runs on a version tag and rejects a tag that differs
   from `deck.toml`: bump the manifest, then tag.
