@@ -15,10 +15,9 @@
 # `uses` and `image` are pinned to the same Grimoire release; move both
 # together.
 #
-# A release does not trigger this workflow by its tag: Pages never makes a
-# deployment from a tag ref live, so release.yml dispatches this workflow on
-# the default branch once the release exists, and the default-branch build
-# publishes the highest tag.
+# A release does not trigger this workflow by its tag: release.yml dispatches
+# it on the default branch once the release exists, and that build publishes
+# the highest tag. See the `docs` job in release.yml for why.
 #
 # One-time manual step: Settings -> Pages -> Source -> GitHub Actions.
 

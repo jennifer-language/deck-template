@@ -88,7 +88,6 @@ entry module `use` the shared modules and `include` each topic.
   workflow, which publishes the book of the highest release tag (main before
   the first one); see <https://grimoire.jennifer-lang.dev/github-pages.html>.
   It runs on pushes to main, and `release.yml` dispatches it on main after a
-  release: Pages never makes a deployment from a tag ref live, so the
-  `github-pages` environment needs no tag rule.
+  release, so the `github-pages` environment needs no tag rule.
 - The release workflow runs on a version tag and rejects a tag that differs
   from `deck.toml`: bump the manifest, then tag.
