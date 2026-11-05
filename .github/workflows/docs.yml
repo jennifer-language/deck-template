@@ -15,15 +15,17 @@
 # `uses` and `image` are pinned to the same Grimoire release; move both
 # together.
 #
-# One-time manual steps: Settings -> Pages -> Source -> GitHub Actions, and
-# Settings -> Environments -> github-pages -> a deployment tag rule
-# `[0-9]*.[0-9]*.[0-9]*` (without it a tag-triggered deploy is refused).
+# A release does not trigger this workflow by its tag: Pages never makes a
+# deployment from a tag ref live, so release.yml dispatches this workflow on
+# the default branch once the release exists, and the default-branch build
+# publishes the highest tag.
+#
+# One-time manual step: Settings -> Pages -> Source -> GitHub Actions.
 
 name: docs
 
 on:
   push:
-    tags: ["[0-9]+.[0-9]+.[0-9]+"]
     # Before the first release every merge refreshes the root; afterwards a
     # push to main only republishes the same release.
     branches: [main]

@@ -138,3 +138,21 @@ jobs:
             --title "${{ steps.pack.outputs.slug }} ${{ steps.pack.outputs.version }}" \
             --notes-file notes.md \
             dist/*.tar.gz dist/*.tar.gz.sha256 dist/*.tar.gz.checksum
+
+  # GitHub Pages serves a deployment started from a tag ref as successful but
+  # never makes it live; only a deployment from the default branch replaces
+  # the site. So the book is republished by docs.yml on the default branch,
+  # which builds the highest release tag - this one. A workflow_dispatch is
+  # the one event the GITHUB_TOKEN may start another workflow with.
+  docs:
+    name: Publish the documentation
+    needs: release
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Run docs.yml on the default branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.event.repository.default_branch }}
+        run: gh workflow run docs.yml --repo "${GITHUB_REPOSITORY}" --ref "${BRANCH}"
