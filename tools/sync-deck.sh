@@ -203,8 +203,13 @@ ${args}" "$dst"
 ${args}\\
 " "$dst"
                     fi
-                else
+                elif [[ -f "$src" ]]; then
                     cp --preserve=mode "$src" "$dst"
+                else
+                    # The template's own copy is a local, uncommitted file
+                    # (CLAUDE.md), so a fresh checkout has none: write a stub
+                    # that holds the required line.
+                    printf '# %s\n\n%s\n' "$path" "$args" > "$dst"
                 fi
                 ;;
             retired)
