@@ -13,4 +13,4 @@ homepage = "https://github.com/jennifer-language/deck-template"
 manual = "https://jennifer-language.github.io/deck-template/"
 
 [engines]
-jennifer = ">=0.25.0"
+jennifer = ">=0.26.0"

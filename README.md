@@ -28,7 +28,7 @@ io.printf("%s\n", mydeck.greet("Ada"));
 
 ## Requirements
 
-Jennifer 0.25.0 or newer. List what the deck needs at run time (network, a
+Jennifer 0.26.0 or newer. List what the deck needs at run time (network, a
 binary on PATH, a database) and whether it runs on `jennifer-tiny`.
 
 ## Development
