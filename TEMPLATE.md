@@ -51,6 +51,7 @@ from the lock.
 | `src/<slug>_test.j` | its white-box test overlay |
 | `docs/SUMMARY.md` | book outline; a chapter with no file fails the build |
 | `docs/cheatsheet.md` | full API; `tools/check-docs.sh` checks every signature, value and type against the code |
+| `docs/*.md`, `README.md` | `tools/check-docs.sh` parses every ```` ```jennifer ```` block (without running it); a `<!-- no-check -->` line directly before a fence exempts that block |
 | `examples/` | one runnable example per subject; CI runs or parses them |
 | `tools/` | CI helpers, byte-identical across decks except the deck's own `check-examples.sh` and optional `check-extra.sh` |
 | `grimoire.toml` | book configuration; `site/` is the gitignored output |
